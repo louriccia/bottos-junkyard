@@ -22,5 +22,5 @@ ref.on("value", function(snapshot) {
     console.log("The read failed: " + errorObject.code);
 });
 }
-
+console.log("ready")
 setup()
