@@ -1,4 +1,3 @@
-function setup(){
   // Initialize Firebase
   console.log("ready")
 /*
@@ -29,7 +28,7 @@ ref.on("value", function(snapshot) {
 }, function (errorObject) {
     console.log("The read failed: " + errorObject.code);
 });*/
-var secondaryAppConfig = {
+var config = {
     apiKey: "AIzaSyCEJX5k_LmFjPxV-1IQYZNESC3apL62onM",
     authDomain: "botto-efbfd.firebaseapp.com",
     databaseURL: "https://botto-efbfd.firebaseio.com",
@@ -39,27 +38,6 @@ var secondaryAppConfig = {
     appId: "1:131908843411:web:9b64e1375087fb07f91a66",
     measurementId: "G-BQHFL0GVF1"
 };
-const app2 = firebase.initializeApp(secondaryAppConfig, "secondary");
-}
-// test default
-console.log('Creating db ref using DEFAULT');
-try {
-  const db1 = firebase.database();
-  console.log('Success!');
-}
-catch(e) {
-    console.log('ERROR: ' + e);
-}
+var secondary = firebase.initializeApp(config, "secondary");
+var secondaryDatabase = secondary.database();
 
-// test URL
-console.log('Creating db ref using URL');
-try {
-  const db2 = firebase.database(app2);
-  console.log('Success!');
-}
-catch(e) {
-    console.log('ERROR: ' + e);
-}
-
-
-setup()
