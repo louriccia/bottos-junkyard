@@ -34,23 +34,23 @@ const app2 = firebase.initializeApp({
   }, 'app2');
 }
 // test default
-print('Creating db ref using DEFAULT');
+console.log('Creating db ref using DEFAULT');
 try {
   const db1 = firebase.database();
-  print('Success!');
+  console.log('Success!');
 }
 catch(e) {
-  print('ERROR: ' + e);
+    console.log('ERROR: ' + e);
 }
 
 // test URL
-print('Creating db ref using URL');
+console.log('Creating db ref using URL');
 try {
   const db2 = firebase.database(app2);
-  print('Success!');
+  console.log('Success!');
 }
 catch(e) {
-  print('ERROR: ' + e);
+    console.log('ERROR: ' + e);
 }
 
 
