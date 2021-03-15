@@ -1,3 +1,4 @@
+
   // Initialize Firebase
   console.log("ready")
 /*
@@ -28,7 +29,7 @@ ref.on("value", function(snapshot) {
 }, function (errorObject) {
     console.log("The read failed: " + errorObject.code);
 });*/
-var config = {
+var secondaryAppConfig = {
     apiKey: "AIzaSyCEJX5k_LmFjPxV-1IQYZNESC3apL62onM",
     authDomain: "botto-efbfd.firebaseapp.com",
     databaseURL: "https://botto-efbfd.firebaseio.com",
@@ -38,8 +39,7 @@ var config = {
     appId: "1:131908843411:web:9b64e1375087fb07f91a66",
     measurementId: "G-BQHFL0GVF1"
 };
-var secondary = firebase.initializeApp(config, "secondary");
-var secondaryDatabase = secondary.database();
+const app2 = firebase.initializeApp(secondaryAppConfig, "secondary");
 
 // test default
 console.log('Creating db ref using DEFAULT');
@@ -60,4 +60,5 @@ try {
 catch(e) {
     console.log('ERROR: ' + e);
 }
+
 
