@@ -39,7 +39,7 @@ var secondaryAppConfig = {
     appId: "1:131908843411:web:9b64e1375087fb07f91a66",
     measurementId: "G-BQHFL0GVF1"
 };
-firebase.initializeApp(secondaryAppConfig, "secondary");
+const app2 = firebase.initializeApp(secondaryAppConfig, "secondary");
 console.log(firebase);
 // test default
 console.log('Creating db ref using DEFAULT');
