@@ -39,7 +39,6 @@ var secondaryAppConfig = {
     appId: "1:131908843411:web:9b64e1375087fb07f91a66",
     measurementId: "G-BQHFL0GVF1"
 };
-var admin = require('firebase-admin');
 
 admin.initializeApp({
     credential: admin.credential.cert({
