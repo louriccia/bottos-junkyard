@@ -1,5 +1,5 @@
 
-
+function setup(){
   // Initialize Firebase
   var database = firebase.database();
 
@@ -10,3 +10,4 @@ ref.on("value", function(snapshot) {
 }, function (errorObject) {
     console.log("The read failed: " + errorObject.code);
 });
+}
