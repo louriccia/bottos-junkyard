@@ -49,5 +49,6 @@ profileref.on("value", function(snapshot) {
     console.log("The read failed: " + errorObject.code);
 });
 console.log(Object.keys(profiledata))
+console.log("work")
 
 
