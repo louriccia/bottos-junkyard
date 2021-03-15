@@ -42,13 +42,13 @@ var secondaryAppConfig = {
 const app2 = firebase.initializeApp(secondaryAppConfig, "secondary");
 const database = firebase.database(app2);
 console.log(firebase)
-var profileref = database.ref("challenge/profiles")
-profileref.on("value", function(snapshot) {
-    profiledata = snapshot.val();
+var ref = database.ref("challenge/times")
+ref.on("value", function(snapshot) {
+    times = snapshot.val();
 }, function (errorObject) {
     console.log("The read failed: " + errorObject.code);
 });
-console.log(Object.keys(profiledata))
+console.log(Object.keys(times))
 console.log("work")
 
 
