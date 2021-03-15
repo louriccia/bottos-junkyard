@@ -41,3 +41,23 @@ var config = {
 var secondary = firebase.initializeApp(config, "secondary");
 var secondaryDatabase = secondary.database();
 
+// test default
+console.log('Creating db ref using DEFAULT');
+try {
+  const db1 = firebase.database();
+  console.log('Success!');
+}
+catch(e) {
+    console.log('ERROR: ' + e);
+}
+
+// test URL
+console.log('Creating db ref using URL');
+try {
+  const db2 = firebase.database(app2);
+  console.log('Success!');
+}
+catch(e) {
+    console.log('ERROR: ' + e);
+}
+
