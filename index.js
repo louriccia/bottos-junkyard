@@ -29,9 +29,14 @@ ref.on("value", function(snapshot) {
 }, function (errorObject) {
     console.log("The read failed: " + errorObject.code);
 });*/
-const app2 = firebase.initializeApp({
-    databaseURL: "https://botto-efbfd.firebaseio.com"
-  }, 'app2');
+var secondaryAppConfig = {
+    projectId: "botto-efbfd",
+    appId: "1:131908843411:web:9b64e1375087fb07f91a66",
+    apiKey: "AIzaSyCEJX5k_LmFjPxV-1IQYZNESC3apL62onM",
+    databaseURL: "https://botto-efbfd.firebaseio.com",
+    storageBucket: "botto-efbfd.appspot.com"
+};
+const app2 = firebase.initializeApp(secondaryAppConfig, "secondary");
 }
 // test default
 console.log('Creating db ref using DEFAULT');
