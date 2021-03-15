@@ -1,5 +1,3 @@
-import firebase  from 'firebase/app';
-
 function setup(){
   // Initialize Firebase
   console.log("ready")
