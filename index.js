@@ -53,9 +53,5 @@ catch(e) {
   print('ERROR: ' + e);
 }
 
-function print(txt) {
-  const $pre = $('pre');
-  $pre.text( $pre.text() + txt + "\n");
-}
 
 setup()
