@@ -40,25 +40,14 @@ var secondaryAppConfig = {
     measurementId: "G-BQHFL0GVF1"
 };
 const app2 = firebase.initializeApp(secondaryAppConfig, "secondary");
-console.log(firebase);
-// test default
-console.log('Creating db ref using DEFAULT');
-try {
-  const db1 = firebase.database();
-  console.log('Success!');
-}
-catch(e) {
-    console.log('ERROR: ' + e);
-}
+const database = firebase.database(app2);
 
-// test URL
-console.log('Creating db ref using URL');
-try {
-  const db2 = firebase.database(app2);
-  console.log('Success!');
-}
-catch(e) {
-    console.log('ERROR: ' + e);
-}
+var profileref = database.ref("profiles")
+profileref.on("value", function(snapshot) {
+    profiledata = snapshot.val();
+}, function (errorObject) {
+    console.log("The read failed: " + errorObject.code);
+});
+console.log(Object.keys(profiledata))
 
 
