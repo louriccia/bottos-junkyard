@@ -1,3 +1,4 @@
+import firebase  from 'firebase/app';
 
 function setup(){
   // Initialize Firebase
@@ -19,8 +20,8 @@ function setup(){
     databaseURL: "https://botto-efbfd.firebaseio.com",
     storageBucket: "botto-efbfd.appspot.com"
 };
-  var firebase = firebase.initializeApp(secondaryAppConfig, "secondary")
-  var database = firebase.database();
+  var secondaryApp = firebase.initializeApp(secondaryAppConfig, "secondary")
+  var database = secondaryApp.database();
 
   var ref = database.ref('challenge/profiles');
 ref.on("value", function(snapshot) {
