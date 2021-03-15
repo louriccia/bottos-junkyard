@@ -42,7 +42,7 @@ var secondaryAppConfig = {
 const app2 = firebase.initializeApp(secondaryAppConfig, "secondary");
 const database = firebase.database(app2);
 
-var profileref = database.ref("profiles")
+var profileref = database.ref("challenge/profiles")
 profileref.on("value", function(snapshot) {
     profiledata = snapshot.val();
 }, function (errorObject) {
