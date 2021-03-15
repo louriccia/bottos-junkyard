@@ -48,6 +48,10 @@ ref.on("value", function(snapshot) {
 }, function (errorObject) {
     console.log("The read failed: " + errorObject.code);
 });
+ref.get().then(function (snapshot){
+    var times = snapshot.val();
+    console.log(times)
+})
 console.log(Object.keys(times))
 console.log("work")
 
