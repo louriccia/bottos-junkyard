@@ -39,8 +39,19 @@ var secondaryAppConfig = {
     appId: "1:131908843411:web:9b64e1375087fb07f91a66",
     measurementId: "G-BQHFL0GVF1"
 };
+var admin = require('firebase-admin');
+
+admin.initializeApp({
+    credential: admin.credential.cert({
+        "projectId": process.env.FIREBASE_PROJECT_ID,
+        "privateKey": process.env.FIREBASE_PRIVATE_KEY.replace(/\\n/g, '\n'),
+        "clientEmail": process.env.FIREBASE_CLIENT_EMAIL
+    }),
+    databaseURL: "https://botto-efbfd.firebaseio.com"
+})
+
 const app2 = firebase.initializeApp(secondaryAppConfig, "secondary");
-const database = firebase.database(app2);
+const database = admin.database(app2);
 
 var profileref = database.ref("profiles")
 profileref.on("value", function(snapshot) {
